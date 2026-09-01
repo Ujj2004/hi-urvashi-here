@@ -1,0 +1,1265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Website</title>
+
+
+    <!-- =========================
+         GOOGLE FONTS
+    ========================== -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+
+    <style>
+
+        /* =================================
+           BASIC SETTINGS
+        ================================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+
+        /* =================================
+           NAVIGATION
+        ================================= */
+
+        nav {
+            background-color: #222;
+
+            padding: 20px;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+        }
+
+
+        nav h2 {
+            color: white;
+        }
+
+
+        nav ul {
+            display: flex;
+
+            list-style: none;
+
+            gap: 25px;
+        }
+
+
+        nav a {
+            color: white;
+
+            text-decoration: none;
+
+            cursor: pointer;
+        }
+
+
+        nav a:hover {
+            color: #00bcd4;
+        }
+
+
+        /* =================================
+           HERO
+        ================================= */
+
+        .hero {
+            height: 500px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+
+            align-items: center;
+
+            text-align: center;
+
+            background-color: #00bcd4;
+
+            color: white;
+
+            padding: 20px;
+        }
+
+
+        .hero h1 {
+            font-size: 50px;
+
+            margin-bottom: 15px;
+        }
+
+
+        .hero p {
+            font-size: 20px;
+
+            margin-bottom: 25px;
+
+            max-width: 700px;
+
+            line-height: 1.6;
+        }
+
+
+        .btn {
+            background-color: white;
+
+            color: #00bcd4;
+
+            padding: 12px 25px;
+
+            border-radius: 5px;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+            cursor: pointer;
+        }
+
+
+        .btn:hover {
+            background-color: #222;
+
+            color: white;
+        }
+
+
+        /* =================================
+           ABOUT
+        ================================= */
+
+        .about {
+            padding: 60px 10%;
+
+            text-align: center;
+        }
+
+
+        .about h2 {
+            font-size: 35px;
+
+            margin-bottom: 20px;
+        }
+
+
+        .about p {
+            font-size: 18px;
+
+            line-height: 1.6;
+        }
+
+
+        /* =================================
+           SERVICES
+        ================================= */
+
+        .services {
+            padding: 60px 10%;
+
+            text-align: center;
+
+            background-color: white;
+        }
+
+
+        .services h2 {
+            font-size: 35px;
+
+            margin-bottom: 30px;
+        }
+
+
+        .cards {
+            display: flex;
+
+            justify-content: center;
+
+            gap: 25px;
+        }
+
+
+        .card {
+            background-color: #f5f5f5;
+
+            padding: 30px;
+
+            width: 250px;
+
+            border-radius: 10px;
+
+            transition: 0.3s;
+        }
+
+
+        .card:hover {
+            transform: translateY(-8px);
+
+            box-shadow: 0 10px 25px #0002;
+        }
+
+
+        .card h3 {
+            margin-bottom: 15px;
+
+            color: #00a0b5;
+        }
+
+
+        .card p {
+            line-height: 1.5;
+        }
+
+
+        /* =================================
+           FOOTER
+        ================================= */
+
+        footer {
+            background-color: #222;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 20px;
+        }
+
+
+
+        /* =================================================
+           SORRY PAGE
+        ================================================= */
+
+        #sorryPage {
+
+            display: none;
+
+            min-height: 100vh;
+
+            position: relative;
+
+            overflow: hidden;
+
+            color: #4b244f;
+
+            background:
+                radial-gradient(
+                    circle at 50% 30%,
+                    #fff8fb 0%,
+                    #ffdce9 25%,
+                    #f59bbd 55%,
+                    #9b6099 100%
+                );
+        }
+
+
+        /* =================================
+           SORRY NAVIGATION
+        ================================= */
+
+        .sorry-nav {
+
+            height: 85px;
+
+            padding: 0 6%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            position: relative;
+
+            z-index: 10;
+        }
+
+
+        .sorry-logo {
+
+            color: white;
+
+            font-family:
+                "Dancing Script",
+                cursive;
+
+            font-size: 38px;
+
+            font-weight: 700;
+        }
+
+
+        .back-button {
+
+            color: white;
+
+            text-decoration: none;
+
+            padding: 11px 22px;
+
+            border-radius: 30px;
+
+            background:
+                rgba(255,255,255,0.2);
+
+            border:
+                1px solid
+                rgba(255,255,255,0.5);
+
+            backdrop-filter: blur(10px);
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+
+        .back-button:hover {
+
+            background: white;
+
+            color: #e8497d;
+
+            transform: translateY(-3px);
+        }
+
+
+        /* =================================
+           SORRY MAIN CONTENT
+        ================================= */
+
+        .sorry-content {
+
+            min-height:
+                calc(100vh - 85px);
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            text-align: center;
+
+            padding:
+                30px 20px 220px;
+
+            position: relative;
+
+            z-index: 2;
+        }
+
+
+        .content-box {
+
+            max-width: 850px;
+
+            animation:
+                fadeIn 1.5s ease;
+        }
+
+
+        @keyframes fadeIn {
+
+            from {
+                opacity: 0;
+
+                transform:
+                    translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+
+                transform:
+                    translateY(0);
+            }
+        }
+
+
+        /* =================================
+           SMALL TITLE
+        ================================= */
+
+        .please {
+
+            color: #e93e73;
+
+            font-size: 17px;
+
+            font-weight: 600;
+
+            letter-spacing: 4px;
+
+            margin-bottom: 15px;
+        }
+
+
+        /* =================================
+           SORRY TITLE
+        ================================= */
+
+        .sorry-title {
+
+            font-family:
+                "Dancing Script",
+                cursive;
+
+            font-size:
+                clamp(
+                    90px,
+                    14vw,
+                    170px
+                );
+
+            line-height: 0.9;
+
+            color: #472044;
+
+            text-shadow:
+                0 8px 20px
+                #73385b44;
+
+            margin-bottom: 30px;
+        }
+
+
+        .sorry-title span {
+            color: #ed477c;
+        }
+
+
+        /* =================================
+           SORRY MESSAGE
+        ================================= */
+
+        .message {
+
+            max-width: 650px;
+
+            margin: auto;
+
+            color: #542e50;
+
+            font-size: 17px;
+
+            line-height: 1.9;
+        }
+
+
+        .message strong {
+            color: #e53e70;
+        }
+
+
+        /* =================================
+           TELEGRAM BUTTON
+        ================================= */
+
+        .telegram {
+
+            display: inline-block;
+
+            margin-top: 35px;
+
+            padding:
+                16px 42px;
+
+            border-radius: 50px;
+
+            text-decoration: none;
+
+            color: white;
+
+            font-weight: 600;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ff729f,
+                    #e83770
+                );
+
+            box-shadow:
+                0 15px 35px
+                #c72d6055;
+
+            transition: 0.3s;
+        }
+
+
+        .telegram:hover {
+
+            transform:
+                translateY(-6px)
+                scale(1.03);
+
+            box-shadow:
+                0 20px 45px
+                #c72d6077;
+        }
+
+
+        /* =================================
+           FLOATING HEARTS
+        ================================= */
+
+        .heart {
+
+            position: absolute;
+
+            color: #ff4f87;
+
+            font-size: 35px;
+
+            opacity: 0.7;
+
+            animation:
+                floating 5s
+                ease-in-out
+                infinite;
+        }
+
+
+        .h1 {
+            left: 8%;
+            top: 22%;
+        }
+
+
+        .h2 {
+            right: 10%;
+            top: 30%;
+
+            animation-delay: 1s;
+        }
+
+
+        .h3 {
+            left: 15%;
+            bottom: 28%;
+
+            animation-delay: 2s;
+        }
+
+
+        .h4 {
+            right: 17%;
+            bottom: 23%;
+
+            animation-delay: 1.5s;
+        }
+
+
+        .h5 {
+            left: 48%;
+            top: 15%;
+
+            animation-delay: 0.5s;
+        }
+
+
+        @keyframes floating {
+
+            0%,
+            100% {
+
+                transform:
+                    translateY(0)
+                    rotate(-5deg);
+            }
+
+            50% {
+
+                transform:
+                    translateY(-25px)
+                    rotate(8deg);
+            }
+        }
+
+
+        /* =================================
+           PROMISE CARDS
+        ================================= */
+
+        .promise-container {
+
+            position: absolute;
+
+            bottom: 25px;
+
+            left: 50%;
+
+            transform:
+                translateX(-50%);
+
+            width: 90%;
+
+            max-width: 950px;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 15px;
+
+            z-index: 5;
+        }
+
+
+        .promise {
+
+            min-height: 110px;
+
+            padding: 18px 12px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+
+            border-radius: 20px;
+
+            background:
+                rgba(255,255,255,0.35);
+
+            border:
+                1px solid
+                rgba(255,255,255,0.55);
+
+            backdrop-filter:
+                blur(12px);
+
+            box-shadow:
+                0 12px 30px
+                #7e3d6840;
+
+            transition: 0.3s;
+        }
+
+
+        .promise:hover {
+
+            transform:
+                translateY(-8px);
+
+            background:
+                rgba(255,255,255,0.55);
+        }
+
+
+        .promise-icon {
+
+            font-size: 30px;
+
+            margin-bottom: 8px;
+        }
+
+
+        .promise p {
+
+            color: #5a3155;
+
+            font-size: 13px;
+
+            line-height: 1.4;
+        }
+
+
+        /* =================================
+           MOBILE
+        ================================= */
+
+        @media (max-width: 700px) {
+
+            nav {
+
+                flex-direction: column;
+
+                gap: 15px;
+            }
+
+
+            .hero {
+
+                height: 550px;
+            }
+
+
+            .hero h1 {
+
+                font-size: 35px;
+            }
+
+
+            .hero p {
+
+                font-size: 16px;
+            }
+
+
+            .cards {
+
+                flex-direction: column;
+
+                align-items: center;
+            }
+
+
+            .sorry-nav {
+
+                height: 70px;
+            }
+
+
+            .sorry-logo {
+
+                font-size: 30px;
+            }
+
+
+            .sorry-content {
+
+                min-height:
+                    calc(100vh - 70px);
+
+                padding-bottom:
+                    270px;
+            }
+
+
+            .promise-container {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+
+                bottom: 15px;
+            }
+
+
+            .promise {
+
+                min-height: 90px;
+            }
+
+        }
+
+
+        @media (max-width: 450px) {
+
+            .sorry-title {
+
+                font-size: 75px;
+            }
+
+
+            .please {
+
+                font-size: 13px;
+
+                letter-spacing: 2px;
+            }
+
+
+            .message {
+
+                font-size: 14px;
+
+                line-height: 1.7;
+            }
+
+
+            .telegram {
+
+                padding:
+                    14px 30px;
+            }
+
+
+            .promise p {
+
+                font-size: 11px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =================================================
+         NORMAL WEBSITE
+    ================================================= -->
+
+    <div id="mainWebsite">
+
+
+        <!-- Navigation -->
+
+        <nav>
+
+            <h2>
+                My Website
+            </h2>
+
+
+            <ul>
+
+                <li>
+                    <a href="#">
+                        Home
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="#about">
+                        About
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="#services">
+                        Services
+                    </a>
+                </li>
+
+
+                <!-- CONTACT BUTTON -->
+
+                <li>
+
+                    <a
+                        href="#"
+                        onclick="openSorryPage(); return false;"
+                    >
+                        Contact
+                    </a>
+
+                </li>
+
+            </ul>
+
+        </nav>
+
+
+
+        <!-- Hero -->
+
+        <section class="hero">
+
+            <h1>
+                HI URVASHI HERE
+            </h1>
+
+
+            <p>
+
+                1.Prepare for CGL exam with me on Telegram.
+
+                2.open when no one is around.
+                3.now click on contact.
+
+                <br>
+
+                Please enable me to text you.
+
+            </p>
+
+
+            <a
+                href="#about"
+                class="btn"
+            >
+                Learn More
+            </a>
+
+        </section>
+
+
+
+        <!-- About -->
+
+        <section
+            class="about"
+            id="about"
+        >
+
+            <h2>
+                About Us
+            </h2>
+
+
+            <p>
+
+                This is a simple website created for you.
+
+                <br>
+
+                Please enable me to text you on Telegram.
+
+            </p>
+
+        </section>
+
+
+
+        <!-- Services -->
+
+        <section
+            class="services"
+            id="services"
+        >
+
+            <h2>
+                Our Services
+            </h2>
+
+
+            <div class="cards">
+
+
+                <div class="card">
+
+                    <h3>
+                        Web Design
+                    </h3>
+
+                    <p>
+                        We create beautiful
+                        and responsive websites.
+                    </p>
+
+                </div>
+
+
+
+                <div class="card">
+
+                    <h3>
+                        HTML
+                    </h3>
+
+                    <p>
+                        Learn how to create
+                        the structure of websites.
+                    </p>
+
+                </div>
+
+
+
+                <div class="card">
+
+                    <h3>
+                        CSS
+                    </h3>
+
+                    <p>
+                        Learn how to make
+                        websites attractive.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- Footer -->
+
+        <footer>
+
+            <p>
+                © 2026 My Website |
+                All Rights Reserved
+            </p>
+
+        </footer>
+
+    </div>
+
+
+
+    <!-- =================================================
+         SORRY WEBSITE
+    ================================================= -->
+
+    <div id="sorryPage">
+
+
+        <!-- Sorry Navigation -->
+
+        <nav class="sorry-nav">
+
+
+            <div class="sorry-logo">
+
+                ♡ I'm Sorry
+
+            </div>
+
+
+            <!-- BACK BUTTON -->
+
+            <a
+                href="#"
+                class="back-button"
+                onclick="closeSorryPage(); return false;"
+            >
+
+                ← Back
+
+            </a>
+
+
+        </nav>
+
+
+
+        <!-- Floating Hearts -->
+
+        <div class="heart h1">
+            ♥
+        </div>
+
+
+        <div class="heart h2">
+            ♥
+        </div>
+
+
+        <div class="heart h3">
+            ♡
+        </div>
+
+
+        <div class="heart h4">
+            ♥
+        </div>
+
+
+        <div class="heart h5">
+            ♡
+        </div>
+
+
+
+        <!-- Sorry Content -->
+
+        <section class="sorry-content">
+
+
+            <div class="content-box">
+
+
+                <div class="please">
+
+                    ♡ PLEASE FORGIVE ME ♡
+
+                </div>
+
+
+                <h1 class="sorry-title">
+
+                    I'm
+                    <span>Sorry</span>
+                    ♡
+
+                </h1>
+
+
+                <p class="message">
+
+                    I know I made a mistake,
+                    and I'm genuinely sorry.
+
+                    <br><br>
+
+                    I never wanted to hurt you
+                    or make you feel bad.
+
+                    <br>
+
+                    <strong>
+                        You are important to me,
+                        and I hope you can forgive me.
+                    </strong>
+
+                    <br><br>
+
+                    I promise I'll learn from my mistake
+                    and try my best to make things right.
+
+                </p>
+
+
+
+                <!-- TELEGRAM -->
+
+                <a
+                    href="https://t.me/Ujjwal2004"
+                    target="_blank"
+                    class="telegram"
+                >
+
+                    ❤️ &nbsp;
+                    Talk to Me on Telegram
+
+                </a>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- Promise Cards -->
+
+        <section class="promise-container">
+
+
+            <div class="promise">
+
+                <div class="promise-icon">
+                    💗
+                </div>
+
+                <p>
+                    Your feelings<br>
+                    matter to me.
+                </p>
+
+            </div>
+
+
+
+            <div class="promise">
+
+                <div class="promise-icon">
+                    🌸
+                </div>
+
+                <p>
+                    I'll learn<br>
+                    from my mistake.
+                </p>
+
+            </div>
+
+
+
+            <div class="promise">
+
+                <div class="promise-icon">
+                    🤝
+                </div>
+
+                <p>
+                    I'll try to<br>
+                    make things right.
+                </p>
+
+            </div>
+
+
+
+            <div class="promise">
+
+                <div class="promise-icon">
+                    ❤️
+                </div>
+
+                <p>
+                    Thank you for<br>
+                    hearing me out.
+                </p>
+
+            </div>
+
+
+        </section>
+
+
+    </div>
+
+
+
+    <!-- =================================================
+         JAVASCRIPT
+    ================================================= -->
+
+    <script>
+
+        function openSorryPage() {
+
+            document.getElementById("mainWebsite").style.display = "none";
+
+            document.getElementById("sorryPage").style.display = "block";
+
+            window.scrollTo(0, 0);
+
+        }
+
+
+        function closeSorryPage() {
+
+            document.getElementById("sorryPage").style.display = "none";
+
+            document.getElementById("mainWebsite").style.display = "block";
+
+            window.scrollTo(0, 0);
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>
